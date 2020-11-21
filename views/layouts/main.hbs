@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    
+
+    
+</head>
+<body class="bg-light">
+    
+    <header >
+        <nav class="navbar navbar-dark bg-primary justify-content-between shadow-sm">
+
+            <a class="navbar-brand" href="/">
+            {{#if isAuthenticated}}
+                {{user.name}}'s
+            {{/if}}
+            Todo List
+            </a>
+
+            {{!-- <a class="btn btn-outline-light mr-2 col" href="/users/login">Login</a> --}}
+
+            <div class="row justify-content-end"> 
+                {{#if isAuthenticated}}
+                    <a class="btn btn-outline-light mr-2 col" href="/users/logout">Logout</a>
+                    <a class="btn  btn-secondary mr-2 col" href="/todos/new">Create</a>
+                    {{else}}
+                    
+                {{/if}}
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="main">
+        <div class="container mt-3">
+             {{{body}}}
+        </div>
+    </div>
+   
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+<script src="https://unpkg.com/vuex@2.0.0" ></script>
+<script src="/javascript/main.js" ></script>
+
+
+</body>
+</html>
